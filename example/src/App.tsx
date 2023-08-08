@@ -9,6 +9,8 @@ export default function App() {
     <Analyzer>
       <View style={styles.container}>
         <Text style={styles.box}>Result</Text>
+        <Text style={{color: "#ffff"}}>Result</Text>
+        <Text style={{color: "#800080"}}>Result</Text>
       </View>
     </Analyzer>
   );
