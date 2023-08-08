@@ -8,7 +8,7 @@ export default function App() {
   return (
     <Analyzer>
       <View style={styles.container}>
-        <Text>Result:</Text>
+        <Text style={styles.box}>Result</Text>
       </View>
     </Analyzer>
   );
@@ -19,10 +19,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: "#000"
   },
   box: {
     width: 60,
     height: 60,
     marginVertical: 20,
+    color: "#0000FF"
   },
 });

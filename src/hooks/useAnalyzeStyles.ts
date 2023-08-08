@@ -1,6 +1,5 @@
 import React, { type ReactNode, useEffect } from 'react';
 
-// O Hook
 export const useAnalyzeStyles = (children: ReactNode) => {
     
   useEffect(() => {
