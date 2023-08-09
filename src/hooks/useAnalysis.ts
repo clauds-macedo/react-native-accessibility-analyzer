@@ -1,7 +1,8 @@
-import React, { type ReactNode } from 'react';
+import React, { type ReactElement, type ReactNode } from 'react';
 import { analyzeContrast } from '../functions/analysis/contrastAnalysis';
 import type { ChildProps } from '../functions/analysis/types';
 import { fontAnalysis } from '../functions/analysis/fontAnalysis';
+import { Text } from 'react-native';
 
 interface NewProps extends ChildProps {
   children: ReactNode;
@@ -9,8 +10,10 @@ interface NewProps extends ChildProps {
 
 export const useAnalysis = () => {
 
-  const analyzer = ({style}: ChildProps) => {
-    fontAnalysis({style});
+  const analyzer = ({style}: ChildProps, child: ReactElement) => {
+    if (child.type === Text) {
+      fontAnalysis({style});
+    }
   }
 
   const analyzeRecursive = (
@@ -24,6 +27,7 @@ export const useAnalysis = () => {
 
       const { style, children } = child.props;
       let newProps: NewProps = {} as NewProps;
+      console.log(child)
 
       if (!style) {
         return;
@@ -33,7 +37,7 @@ export const useAnalysis = () => {
         parentBackgroundColor,
       });
 
-      analyzer({style});
+      analyzer({style}, child);
 
       newProps.style = newStyle;
 

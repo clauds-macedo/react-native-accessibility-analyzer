@@ -9,7 +9,7 @@ export const fontAnalysis = ({ style }: ChildProps) => {
   }
   const { fontSize, allowFontScaling } = style;
 
-  if (!!fontSize || Number(fontSize) <= MAX_LEGIBLE_FONT_SIZE) {
+  if (!fontSize || Number(fontSize) <= MAX_LEGIBLE_FONT_SIZE) {
     console.warn(
       `For users with low vision, it is recommended that the font size is at least ${MIN_RECOMMENDED_FONT_SIZE}.`
     );
