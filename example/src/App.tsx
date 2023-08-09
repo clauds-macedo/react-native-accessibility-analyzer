@@ -27,6 +27,6 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     marginVertical: 20,
-    color: "#0000FF"
+    color: "#0000FF",
   },
 });

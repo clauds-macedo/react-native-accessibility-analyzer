@@ -12,7 +12,7 @@ export const useAnalysis = () => {
 
   const analyzer = ({style}: ChildProps, child: ReactElement) => {
     if (child.type === Text) {
-      fontAnalysis({style});
+      fontAnalysis({style: {...style, allowFontScaling: child.props.allowFontScaling}, });
     }
   }
 
